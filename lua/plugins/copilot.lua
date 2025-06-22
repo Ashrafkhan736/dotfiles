@@ -20,11 +20,16 @@ return {
       --   --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
       -- },
       provider = "copilot",
-      copilot = {
-        model = "claude-sonnet-4",
-        temperature = 0,
-        max_tokens = 30000,
-        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+      providers = {
+        copilot = {
+          model = "claude-sonnet-4",
+          timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+          extra_request_body = {
+            max_tokens = 30000,
+
+            temperature = 0,
+          },
+        },
       },
       behaviour = {
         -- use_absolute_path = true,
